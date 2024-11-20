@@ -1,0 +1,13 @@
+universe = vanilla
+Requirements = (Arch == "X86_64")
++RUQueue = "cms"
++AccountingGroup = "group_rutgers.akobert"
++SingularityImage = "/cvmfs/unpacked.cern.ch/registry.hub.docker.com/cmssw/el7:x86_64"
+Executable = /home/akobert/CMSSW_10_6_30_patch1/src/DeepNTuples/Ntupler/Zprime/M125/run.sh
+should_transfer_files = NO
+Output = /home/akobert/CMSSW_10_6_30_patch1/src/TreeFiles/run_$(cluster)_$(process).stdout
+Error = /home/akobert/CMSSW_10_6_30_patch1/src/TreeFiles/run_$(cluster)_$(process).stderr
+Log = /home/akobert/CMSSW_10_6_30_patch1/src/TreeFiles/run_$(cluster)_$(process).condor
+Arguments = $(cluster) $(process)
+max_materialize = 150
+Queue 40
